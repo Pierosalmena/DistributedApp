@@ -6,7 +6,7 @@ const app = express();
 //Middleware, routes setup, etc.
 
 app.use(express.json());
-app.use('/users', userRoutes)
+app.use('/', userRoutes)
 
 
 const PORT = 3002;

@@ -18,11 +18,11 @@ export async function createOrder(req: Request, res: Response) {
 
       // 1. validate user exists
 
-    const userRes = await fetch(`http://localhost:3002/users/${userId}`)
+    const userRes = await fetch(`http://localhost:3002/${userId}`)
     if (!userRes.ok) return res.status(404).json({error:'User not found'})
 
     // 2. Fetch
-    const prodRes = await fetch(`http://localhost:3001/products/${productId}`)
+    const prodRes = await fetch(`http://localhost:3001/${productId}`)
     if (!prodRes.ok) return res.status(404).json({error:'Product not found'});
     const product = await prodRes.json();
 

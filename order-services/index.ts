@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/orders', orderRouter);
+app.use('/', orderRouter);
 
 const PORT = 3003;
 
