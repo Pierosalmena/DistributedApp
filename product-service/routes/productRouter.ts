@@ -1,11 +1,11 @@
 import {Router} from 'express';
+import {getAllProducts , getProductById} from '../controllers/productControllers'
+import {cache} from '../middlewares/cache';
 
 const productRouter = Router();
 
-import {getAllProducts , getProductById} from '../controllers/productControllers'
-
-productRouter.get("/", getAllProducts )
-productRouter.get("/:productID", getProductById )
+productRouter.get('/', cache(30), getAllProducts);         
+productRouter.get("/:productID", cache(60), getProductById )
 
 // productRouter.get("/", (req, res) => res.send("All products"));
 // productRouter.get("/:productId", (req, res) => {

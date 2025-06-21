@@ -1,5 +1,6 @@
 import express from 'express';
 import productRouter from "./routes/productRouter";
+import './cache';                   // ← <-- this runs cache.ts top–level code
 
 const app = express();
 
