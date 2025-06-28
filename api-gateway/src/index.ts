@@ -53,6 +53,10 @@ app.use(
     })
 );
 
+app.use(
+  ''
+)
+
 // Fallback for unmatched
 //app.use((_req, res) => res.status(404).json({ error: 'Not found' }));
 
